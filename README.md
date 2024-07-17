@@ -35,3 +35,8 @@ npx sequelize init
 npx sequelize db:create
 
 npx sequelize model:generate --name City --attributes name:String
+npx sequelize db:migrate
+
+npx sequelize db:migrate:undo
+
+Whatever changes we do in model file that is at javascript level not at database table level, for reflecting the changes in db level we need to add changes in migration file.
