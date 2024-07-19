@@ -42,6 +42,16 @@
     npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
     npx sequelize db:migrate
 
+### Airplane ->
+
+    npx sequelize model:generate --name Airplane --attributes modelNumber:String,capacity:integer
+    npx sequelize db:migrate
+
+### Flight ->
+
+    npx sequelize model:generate --name Flights --attributes flightNumber:String,airplaneId:integer,departureAirportId:integer,arrivalAirportId:integer,arrivalTime:Date,departureTime:Date,price:integer,boardingGate:String,totalSeats:integer
+    npx sequelize db:migrate
+
 # IMPORTANT SEQUELIZE COMMANDS-
 
 npx sequelize init
