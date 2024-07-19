@@ -33,9 +33,14 @@
 
 ### City -> id, name, created_at, updated_at
 
+    npx sequelize model:generate --name City --attributes name:String
+    npx sequelize db:migrate
+
 ### Airport -> id, name, address, city_id, created_at, updated_at
 
     Relationship --> City has many Aiports and Airport belongs to a City. (One to Many)
+    npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
+    npx sequelize db:migrate
 
 # IMPORTANT SEQUELIZE COMMANDS-
 
@@ -46,5 +51,8 @@ npx sequelize model:generate --name City --attributes name:String
 npx sequelize db:migrate
 
 npx sequelize db:migrate:undo
+
+npx sequelize seed:generate --name add-airports
+npx sequelize db:seed:all
 
 Whatever changes we do in model file that is at javascript level not at database table level, for reflecting the changes in db level we need to add changes in migration file.
